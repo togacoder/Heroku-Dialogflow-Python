@@ -1,7 +1,12 @@
 from flask import Flask, request
 import json
+import requests
 
 app = Flask(__name__)
+
+def post_GAS(data):
+    url = 'https://script.google.com/macros/s/AKfycbyWIu6E1aH_NGNJfNSCCdqCdbwXopzmQxvO91nlcGugASqWrcc/exe://script.google.com/macros/s/AKfycbyWIu6E1aH_NGNJfNSCCdqCdbwXopzmQxvO91nlcGugASqWrcc/exec'
+    response = requests.post(url, data)
 
 @app.route('/echo', methods=['POST'])
 def echo():
@@ -40,5 +45,6 @@ def echo():
                 }
             }
         }
+    post_GAS(response)
 
     return json.dumps(response)
