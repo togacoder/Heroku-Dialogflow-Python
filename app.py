@@ -15,7 +15,7 @@ def echo():
                         "items": [
                             {
                                 "simpleResponse": {
-                                    "textToSpeech": message 
+                                    "textToSpeech": "Hello World." 
                                 }
                             }
                         ]
@@ -32,7 +32,7 @@ def echo():
                         "items": [
                             {
                                 "simpleResponse": {
-                                    "textToSpeech": "else" 
+                                    "textToSpeech": "Hello Heroku." 
                                 }
                             }
                         ]
