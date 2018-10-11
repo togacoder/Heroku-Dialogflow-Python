@@ -43,7 +43,7 @@ def echo():
         }
     
 
-    url = 'https://script.google.com/macros/s/AKfycbyWIu6E1aH_NGNJfNSCCdqCdbwXopzmQxvO91nlcGugASqWrcc/exec'
-    res = requests.post(url, response) 
+    # url = 'https://script.google.com/macros/s/AKfycbyWIu6E1aH_NGNJfNSCCdqCdbwXopzmQxvO91nlcGugASqWrcc/exec'
+    # res = requests.post(url, response) 
     return json.dumps(response)
 
