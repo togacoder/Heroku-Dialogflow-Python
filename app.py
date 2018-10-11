@@ -32,7 +32,7 @@ def echo():
                         "items": [
                             {
                                 "simpleResponse": {
-                                    "textToSpeech": 'else' 
+                                    "textToSpeech": "else" 
                                 }
                             }
                         ]
