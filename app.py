@@ -6,12 +6,8 @@ app = Flask(__name__)
 
 @app.route('/echo', methods=['POST'])
 def echo():
-    # SpreadSheets URL
-    url = 'https://script.google.com/macros/s/AKfycbyWIu6E1aH_NGNJfNSCCdqCdbwXopzmQxvO91nlcGugASqWrcc/exec'
-    message = request;
-    res = requests.post(url, json.dumps(message)) 
+    message = request.json.get("queryResult").get("parameters").get("message");
 
-    message = message.json.get("queryResult").get("parameters").get("message")
     if message == "hello":
         response = {
             "payload": {
@@ -47,7 +43,10 @@ def echo():
             }
         }
     
-    # SpreadSheetsにPost
-    res = requests.post(url, json.dumps(response))
+    post_SpreadSheets(response)
 
     return json.dumps(response) 
+
+def post_SpreadSheets(response):
+    url = 'https://script.google.com/macros/s/AKfycbyWIu6E1aH_NGNJfNSCCdqCdbwXopzmQxvO91nlcGugASqWrcc/exec'
+    res = requests.post(url, json.dumps(response))
