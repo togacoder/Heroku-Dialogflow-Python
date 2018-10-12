@@ -7,8 +7,9 @@ app = Flask(__name__)
 @app.route('/echo', methods=['POST'])
 def echo():
     message = request.json.get("queryResult").get("parameters").get("message");
+    data = request.json
+    post_SpreadSheets(data)
 
-    response = ""
     if message == "hello":
         response = {
             "payload": {
@@ -48,9 +49,9 @@ def echo():
 
     return json.dumps(response) 
 
-def post_SpreadSheets(response):
+def post_SpreadSheets(data):
     url = 'https://script.google.com/macros/s/AKfycbyWIu6E1aH_NGNJfNSCCdqCdbwXopzmQxvO91nlcGugASqWrcc/exec'
-    res = requests.post(url, json.dumps(response))    
+    res = requests.post(url, json.dumps(data))    
 
 if __name__ == '__main__':
     app.run(host="localhost")
