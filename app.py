@@ -9,8 +9,7 @@ def echo():
     # queryResult.queryText : 認識文字列
     # parameters : 変数
     message = request.json.get("queryResult").get("parameters").get("message");
-    data = request.json
-    post_SpreadSheets(data)
+    post_SpreadSheets(message)
     
     if message == 'hello':
         message = 'Hello, World!!' 
@@ -19,9 +18,10 @@ def echo():
     
     response = make_json(message)
 
-    post_SpreadSheets(response)
+    post_SpreadSheets(message)
 
     return json.dumps(response) 
+
 
 def make_json(message):
     response = {
@@ -42,9 +42,11 @@ def make_json(message):
         }
     return response
 
+
 def post_SpreadSheets(data):
     url = 'https://script.google.com/macros/s/AKfycbyWIu6E1aH_NGNJfNSCCdqCdbwXopzmQxvO91nlcGugASqWrcc/exec'
     res = requests.post(url, json.dumps(data))    
+
 
 if __name__ == '__main__':
     app.run(host="localhost")
