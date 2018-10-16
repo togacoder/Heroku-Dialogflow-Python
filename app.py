@@ -6,7 +6,8 @@ app = Flask(__name__)
 
 @app.route('/echo', methods=['POST'])
 def echo():
-    message = request.json.get("queryResult").get("parameters").get("message");
+    # message = request.json.get("queryResult").get("parameters").get("message");
+    message = request.json.get("queryResult").get("queryText");
     post_SpreadSheets(message)
 
     # 会話の制御
