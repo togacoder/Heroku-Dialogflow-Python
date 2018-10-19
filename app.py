@@ -6,6 +6,8 @@ app = Flask(__name__)
 
 @app.route('/echo', methods=['POST'])
 def echo():
+    # parameters : Dialogflowで設定した変数名
+    # queryText : 音声認識した文字列
     # message = request.json.get("queryResult").get("parameters").get("message");
     message = request.json.get("queryResult").get("queryText");
     post_SpreadSheets(message)
