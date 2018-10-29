@@ -21,11 +21,11 @@ def echo():
     # message = 'レスポンス'
     if displayName == '帰宅時1':
         message = 'お帰りなさい。'
-    elif dispalyName == '帰宅時2':
+    elif displayName == '帰宅時2':
         message = 'お疲れ様です。'
     elif displayName == 'Default Welcome Intent':
         message = 'Start Dialogflow'
-    elif dispalyName == 'Default Fallback Intent':
+    elif displayName == 'Default Fallback Intent':
         message = 'もう一度お願いします。'
     elif displayName == 'Exit':
         message = 'Outing Agentを終了します。'
