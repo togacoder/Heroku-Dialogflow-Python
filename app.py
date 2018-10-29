@@ -14,7 +14,7 @@ def echo():
     # Intent Name
     displayName = request.json.get("queryResult").get("intent").get("displayName")
 
-    post_SpreadDheets(displayName)
+    post_SpreadSheets(displayName)
     post_SpreadSheets(message)
 
     # 会話の制御
@@ -30,7 +30,6 @@ def echo():
     elif displayName == 'Exit':
         message = 'Outing Agentを終了します。'
     
-    message = 'hello'
     response = res_json(message)
     post_SpreadSheets(message)
 
