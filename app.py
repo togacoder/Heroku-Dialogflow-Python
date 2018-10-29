@@ -14,7 +14,7 @@ def echo():
     # Intent Name
     displayName = request.json.get("queryResult").get("intent").get("displayName")
 
-    post_SpreadDheets(displaynName)
+    post_SpreadDheets(displayName)
     post_SpreadSheets(message)
 
     # 会話の制御
