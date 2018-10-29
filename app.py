@@ -56,7 +56,7 @@ def res_json(message):
 
 # Google SpreadSheets にPOSTする
 def post_SpreadSheets(data):
-    url = 'https://script.google.com/macros/s/AKfycbyWIu6E1aH_NGNJfNSCCdqCdbwXopzmQxvO91nlcGugASqWrcc/exec'
+    url = 'https://script.google.com/macros/s/AKfycbze93rXUHBp1vcHF5GQLxUqbgPrQeNjGwCOBCFYleBaZNiJm3_C/exec'
     res = requests.post(url, json.dumps(data))    
 
 
