@@ -30,6 +30,7 @@ def echo():
     elif displayName == 'Exit':
         message = 'Outing Agentを終了します。'
     
+    message = 'hello'
     response = res_json(message)
     post_SpreadSheets(message)
 
@@ -60,6 +61,7 @@ def res_json(message):
 
 # Google SpreadSheets にPOSTする
 def post_SpreadSheets(data):
+    # Outing URL
     url = 'https://script.google.com/macros/s/AKfycbze93rXUHBp1vcHF5GQLxUqbgPrQeNjGwCOBCFYleBaZNiJm3_C/exec'
     res = requests.post(url, json.dumps(data))    
 
