@@ -23,6 +23,8 @@ def echo():
         message = 'お帰りなさい。'
     elif dispalyName == '帰宅時2':
         message = 'お疲れ様です。'
+    elif displayName == 'Default Welcome Intent':
+        message = 'Start Dialogflow'
     elif dispalyName == 'Default Fallback Intent':
         message = 'もう一度お願いします。'
     
