@@ -27,6 +27,8 @@ def echo():
         message = 'Start Dialogflow'
     elif dispalyName == 'Default Fallback Intent':
         message = 'もう一度お願いします。'
+    elif displayName == 'Exit':
+        message = 'Outing Agentを終了します。'
     
     response = res_json(message)
     post_SpreadSheets(message)
