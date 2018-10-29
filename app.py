@@ -10,13 +10,21 @@ def echo():
     # queryText : 音声認識した文字列
     # message = request.json.get("queryResult").get("parameters").get("message");
     message = request.json.get("queryResult").get("queryText");
+
+    # Intent Name
+    displayName = request.json.get("queryResult").get("intent").get("displayName")
+
+    post_SpreadDheets(displaynName)
     post_SpreadSheets(message)
 
     # 会話の制御
-    if message == 'hello':
-        message = 'Hello, World!!' 
-    else:
-        message = 'hello, Heroku.'
+    # message = 'レスポンス'
+    if displayName == '帰宅時1':
+        message = 'お帰りなさい。'
+    elif dispalyName == '帰宅時2':
+        message = 'お疲れ様です。'
+    elif dispalyName == 'Default Fallback Intent':
+        message = 'もう一度お願いします。'
     
     response = res_json(message)
     post_SpreadSheets(message)
