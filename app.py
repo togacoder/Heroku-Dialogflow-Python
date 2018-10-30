@@ -25,6 +25,10 @@ def echo():
         message = 'お帰りなさい。'
     elif displayName == '帰宅時2':
         message = 'お疲れ様です。'
+    elif displayName == '　外出時1':
+        message = 'いってらっしゃい。'
+    elif displayName == '外出時2':
+        message = 'たくさん歩きましょう。'
     elif displayName == 'Default Welcome Intent':
         message = 'Start Dialogflow'
     elif displayName == 'Default Fallback Intent':
