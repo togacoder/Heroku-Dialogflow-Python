@@ -16,8 +16,8 @@ def echo():
     # Intent Name
     displayName = request.json.get("queryResult").get("intent").get("displayName")
 
-    post_SpreadSheets(displayName.encode('utf-8'))
-    post_SpreadSheets(message.encode('utf-8'))
+    post_SpreadSheets(displayName)
+    post_SpreadSheets(message)
 
     # 会話の制御
     # message = 'レスポンス'
@@ -33,8 +33,8 @@ def echo():
         message = 'Outing Agentを終了します。'
     
     res = res_json(message)
-    post_SpreadSheets(message.encode('utf-8'))
-
+    post_SpreadSheets(message)
+    
     # Dialogflow に返す
     return json.dumps(res) 
 
