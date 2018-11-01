@@ -16,15 +16,19 @@ def echo():
     # Intent Name
     displayName = request.json.get("queryResult").get("intent").get("displayName")
 
+    place = ''
+    if displayName == '帰宅時2':
+        place = request.json.get("queryResult").get("parameters").get("place")
+
     post_SpreadSheets(displayName)
     post_SpreadSheets(message)
 
     # 会話の制御
     # message = 'レスポンス'
     if displayName == '帰宅時1':
-        message = 'お帰りなさい。'
+        message = 'お帰りなさい。どこに行ってきたの？'
     elif displayName == '帰宅時2':
-        message = 'お疲れ様です。'
+        message = place + 'ですね。'
     elif displayName == '外出時1':
         message = 'いってらっしゃい。'
     elif displayName == '外出時2':
