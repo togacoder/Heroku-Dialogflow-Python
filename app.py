@@ -64,7 +64,7 @@ def res_json(message):
                     ]
                 }
             },
-            "Slack": {
+            "slack": {
                 "text": message
             }
         }
