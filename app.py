@@ -51,13 +51,6 @@ def echo():
 # Dialogflow に返すjsonを作成
 def res_json(message):
     res = {
-        "fulfillmentMessages": [
-            {
-                "text": [
-                    message
-                ],
-            }
-        ],
         "payload": {
             "google": {
                 "expectUserResponse": True,
