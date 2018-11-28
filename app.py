@@ -1,4 +1,4 @@
-# -*- coding: utf8 -*-
+#sk -*- coding: utf8 -*-
 
 from flask import Flask, request
 import json
@@ -11,6 +11,7 @@ def echo():
     # parameters : Dialogflowで設定した変数名
     # queryText : 音声認識した文字列
     # message = request.json.get("queryResult").get("parameters").get("message");
+    # place = request.json.get("queryResult").get("parameters").get("palce")
     message = request.json.get("queryResult").get("queryText");
 
     # Intent Name
@@ -50,6 +51,13 @@ def echo():
 # Dialogflow に返すjsonを作成
 def res_json(message):
     res = {
+        "fulfillmentMessages": [
+            {
+                "text": [
+                    message
+                ],
+            }
+        ],
         "payload": {
             "google": {
                 "expectUserResponse": True,
@@ -62,6 +70,9 @@ def res_json(message):
                         }
                     ]
                 }
+            },
+            "Slack": {
+                "text": message
             }
         }
     }
@@ -77,3 +88,4 @@ def post_SpreadSheets(data):
 
 if __name__ == '__main__':
     app.run(host="localhost")
+    
